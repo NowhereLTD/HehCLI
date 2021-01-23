@@ -1,0 +1,6 @@
+#!/bin/sh
+if ! [ -x "$(command -v deno)" ]; then
+  echo "Error deno is not installed!"
+else
+  deno run --allow-net --allow-read --allow-run heh.js $@
+fi
