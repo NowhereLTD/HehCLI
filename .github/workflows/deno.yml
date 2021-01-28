@@ -31,6 +31,6 @@ jobs:
         run: ./heh create Test
       - name: Run run project test
         run: |
-          ./heh run Test &
-          sleep 10 &&
+          sudo ./heh run Test &
+          sleep 3 &&
           curl localhost
