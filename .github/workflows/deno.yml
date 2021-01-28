@@ -19,15 +19,12 @@ jobs:
     runs-on: ${{ matrix.os }} # runs a test on Ubuntu, Windows and macOS
     strategy:
       matrix:
-        deno: ["v1.x", "nightly"]
-        os: [windows-latest, ubuntu-latest]
-
+        os: [ubuntu-latest]
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
       - name: Setup Deno
-        uses: denolib/deno-action@0.19.0
+        uses: denolib/setup-deno@v2.3.0
       - name: Run Deno base tests
         run: deno test -A --unstable
       - name: Run Bash tests
