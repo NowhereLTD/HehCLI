@@ -30,4 +30,7 @@ jobs:
       - name: Run create project test
         run: ./heh create Test
       - name: Run run project test
-        run: ./heh run Test
+        run: |
+          ./heh run Test &
+          sleep 10 &&
+          curl localhost
