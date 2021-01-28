@@ -25,7 +25,9 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Deno
         uses: denolib/setup-deno@v2.3.0
-      - name: Run Deno base tests
-        run: deno test -A --unstable
-      - name: Run Bash tests
+      - name: Run help test
         run: ./heh help
+      - name: Run create project test
+        run: ./heh create Test
+      - name: Run run project test
+        run: ./heh run Test
