@@ -31,7 +31,7 @@ jobs:
         run: ./heh create Test
       - name: Run run project test
         run: |
-          curl -fsSL https://deno.land/x/install/install.sh | sh &
+          sudo curl -fsSL https://deno.land/x/install/install.sh | sh &
           sudo ./heh run Test &
           sleep 3 &&
           curl localhost
