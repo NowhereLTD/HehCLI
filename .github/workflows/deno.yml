@@ -29,10 +29,3 @@ jobs:
         run: ./heh help
       - name: Run create project test
         run: ./heh create Test
-      - name: Install deno for sudo
-        run: sudo curl -fsSL https://deno.land/x/install/install.sh | sh
-      - name: Run run project test
-        run: |
-          sudo ./heh run Test &
-          sleep 3 &&
-          curl localhost
