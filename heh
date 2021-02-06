@@ -2,5 +2,18 @@
 if ! [ -x "$(command -v deno)" ]; then
   echo "Error deno is not installed!"
 else
-  deno run --allow-net --allow-read --allow-run heh.js $@
+  case "$1" in
+    "run")
+      if [ -z $2 ]; then
+        echo "Error: Cannot found project.";
+      else
+        MAP="$2/import_map.json";
+        SERVER="$2/server.js";
+        deno run --allow-net --allow-read --allow-run --unstable --import-map=$MAP $SERVER;
+      fi
+      exit 0;;
+    *)
+      deno run --allow-net --allow-read --allow-run heh.js $@;
+      exit 0;;
+  esac
 fi
