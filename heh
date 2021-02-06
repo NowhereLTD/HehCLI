@@ -11,9 +11,9 @@ else
         SERVER="$2/server.js";
         deno run --allow-net --allow-read --allow-run --unstable --import-map=$MAP $SERVER;
       fi
-      exit 1;;
+      exit 0;;
     *)
       deno run --allow-net --allow-read --allow-run heh.js $@;
-      exit 1;;
+      exit 0;;
   esac
 fi
